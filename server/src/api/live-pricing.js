@@ -48,10 +48,10 @@ const livePricing = {
 };
 
 function createSession (params) {
-  console.log(JSON.stringify(params)+'creating session...');
+  console.log(JSON.stringify(params.parameters)+'creating session...');
 
   return new Promise((resolve, reject) => {
-    livePricing.api.createSession(params)
+    livePricing.api.createSession(params.parameters)
       .then((response) => {
         if (response.status !== 201) {
           console.error(response.status, 'something went wrong...')
@@ -173,7 +173,7 @@ const sessionParams = (query) => {
 }
 
 livePricing.search = (searchParams) => {
-  console.log(JSON.stringify(searchParams)+"LES PARAMS")
+  console.log(searchParams + "livePricing")
   return new Promise((resolve, reject) => {
     createSession(searchParams)
       .then(startPolling)

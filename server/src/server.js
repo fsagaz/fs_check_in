@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
 */
 app.get('/api/search', (req, res) => {
   parameters=req.query;
-
+  console.log(parameters)
   api.livePricing.search({parameters}
 
     // TODO client to provide params
