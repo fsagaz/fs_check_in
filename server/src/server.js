@@ -34,6 +34,7 @@ app.get('/api/search', (req, res) => {
   .then((results) => {
     // TODO - a better format for displaying results to the client
     console.log('TODO: transform results for consumption by client');
+    console.log(JSON.stringify(results)+"results")
     res.json(results);
   })
   .catch(console.error);
